@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #111827;
+  color: #F9FAFB;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: #047857;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #059669;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #047857;
+  border-bottom: 2px solid rgba(209, 213, 219, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #6B7280;
+}
+
+.kontejner {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+  background-color: rgba(17, 24, 39, 0.9);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.15);
+}
+
+.hlavicka-obsah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #F9FAFB;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #047857;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #6B7280;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #047857;
+  transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a.aktivni::after {
+  width: 100%;
+}
+
+nav a:hover,
+nav a.aktivni {
+  color: #F9FAFB;
+}
+
+main {
+  flex: 1;
+  margin-top: 80px;
+  padding: 3rem 0;
+}
+
+.uvod {
+  text-align: center;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba(4, 120, 87, 0.15) 0%, #111827 100%);
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.uvod h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.uvod p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.tlacitko {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #047857;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.tlacitko:hover {
+  background-color: transparent;
+  color: #047857;
+  border-color: #047857;
+  box-shadow: 0 0 15px rgba(4, 120, 87, 0.5);
+}
+
+.dva-sloupce {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.tri-sloupce {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.ctyri-sloupce {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.karta {
+  background-color: #1F2937;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(209, 213, 219, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.karta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: #047857;
+}
+
+.vnoreny-seznam {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vnoreny-seznam > li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.vnoreny-seznam > li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #047857;
+}
+
+.vnoreny-seznam ul, .vnoreny-seznam ol {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  color: #6B7280;
+  border-left: 2px solid rgba(209, 213, 219, 0.15);
+}
+
+.vnoreny-seznam ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+}
+
+.vnoreny-seznam ol li {
+  margin-bottom: 0.3rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background-color: #1F2937;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #047857;
+  color: #fff;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.15);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.polozka-formulare {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.povinne::after {
+  content: ' *';
+  color: #ef4444;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #111827;
+  border: 1px solid rgba(209, 213, 219, 0.15);
+  border-radius: 0.5rem;
+  color: #F9FAFB;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #047857;
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.2);
+}
+
+.skupina-radio, .skupina-checkbox {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.skupina-radio label, .skupina-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.polozka-galerie {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.polozka-galerie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.popisek-galerie {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  transform: translateY(100%);
+  transition: transform 0.4s;
+}
+
+.polozka-galerie:hover .popisek-galerie {
+  transform: translateY(0);
+}
+
+.polozka-galerie:hover img {
+  transform: scale(1.1);
+}
+
+footer {
+  background-color: #1F2937;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(209, 213, 219, 0.15);
+  margin-top: auto;
+}
+
+.obsah-paticky {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.sloupec-paticky h3 {
+  color: #047857;
+  margin-bottom: 1.5rem;
+}
+
+.sloupec-paticky ul {
+  list-style: none;
+}
+
+.sloupec-paticky ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sloupec-paticky ul a {
+  color: #6B7280;
+}
+
+.sloupec-paticky ul a:hover {
+  color: #F9FAFB;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(209, 213, 219, 0.15);
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hlavicka-obsah {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .dva-sloupce, .tri-sloupce {
+    grid-template-columns: 1fr;
+  }
+  .uvod h1 {
+    font-size: 2.5rem;
+  }
+}
